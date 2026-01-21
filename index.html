@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Danlami Bethel | Backend Developer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f4f4f4;
+    }
+    
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    #header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    #header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    #header p {
+      font-size: 1.3em;
+      opacity: 0.95;
+    }
+    
+    /* Main Content */
+    #main {
+      background: white;
+      margin: -40px auto 40px;
+      max-width: 1100px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    
+    section {
+      padding: 50px 60px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    section:last-child {
+      border-bottom: none;
+    }
+    
+    .major h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #667eea;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .major h2:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 3px;
+      background: #764ba2;
+    }
+    
+    /* About Section */
+    #about p {
+      font-size: 1.1em;
+      color: #555;
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+    
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .skill-category {
+      background: #f9f9f9;
+      padding: 25px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    }
+    
+    .skill-category h3 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+    
+    .skill-list {
+      list-style: none;
+    }
+    
+    .skill-list li {
+      padding: 8px 0;
+      color: #555;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .skill-list li:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #764ba2;
+      font-weight: bold;
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .project-card {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 3px solid #667eea;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .project-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.4em;
+    }
+    
+    .project-card h3 a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .project-card h3 a:hover {
+      color: #667eea;
+    }
+    
+    .project-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .tech-tags {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .tech-tag {
+      background: #667eea;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.85em;
+    }
+    
+    /* Contact Section */
+    .contact-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+    
+    .contact-list li {
+      padding: 12px 0;
+      font-size: 1.1em;
+    }
+    
+    .contact-list a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .contact-list a:hover {
+      color: #764ba2;
+      text-decoration: underline;
+    }
+    
+    /* Footer */
+    #footer {
+      text-align: center;
+      padding: 30px;
+      background: #333;
+      color: white;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      #header h1 {
+        font-size: 2em;
+      }
+      
+      #header p {
+        font-size: 1.1em;
+      }
+      
+      section {
+        padding: 30px 30px;
+      }
+      
+      .major h2 {
+        font-size: 1.8em;
+      }
+      
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header">
+    <h1>Danlami Bethel</h1>
+    <p>Backend Developer | Python | FastAPI | MySQL</p>
+  </header>
+
+  <!-- Main -->
+  <div id="main">
+    
+    <!-- About Me -->
+    <section id="about">
+      <header class="major">
+        <h2>About Me</h2>
+      </header>
+      <p> 
+        Hi, I'm Danlami, a passionate backend developer specializing in building robust and scalable web applications.
+        I help businesses and individuals create custom solutions that drive results through clean, efficient code.
+        With expertise in Python, FastAPI, SQLAlchemy, and MySQL, I design secure, high-performance APIs and backend systems.
+        I'm experienced in implementing authentication systems, middleware, modular routing, and containerization with Docker.
+        Let's collaborate to bring your next project to life!
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <header class="major">
+        <h2>Technical Skills</h2>
+      </header>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Backend Development</h3>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>RESTful APIs</li>
+            <li>SQLAlchemy ORM</li>
+            <li>Authentication & Authorization</li>
+            <li>Middleware</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Database</h3>
+          <ul class="skill-list">
+            <li>MySQL</li>
+            <li>SQL</li>
+            <li>Database Design</li>
+            <li>Query Optimization</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <ul class="skill-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>DevOps & Tools</h3>
+          <ul class="skill-list">
+            <li>Docker</li>
+            <li>Git & GitHub</li>
+            <li>Version Control</li>
+            <li>Modular Architecture</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Projects -->
+    <section id="projects">
+      <header class="major">
+        <h2>Projects</h2>
+      </header>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3><a href="https://github.com/danlami-x/Todo-app" target="_blank">To-Do App</a></h3>
+          <p>A FastAPI-based task management application with full CRUD operations. Features user authentication, RESTful API endpoints, and real-time task tracking.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">SQLAlchemy</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+        </article>
+        
+        <article class="project-card">
+          <h3><a href="https://github.com/danlami-x/Produce_App" target="_blank">Produce App</a></h3>
+          <p>A comprehensive web application for managing agricultural produce. Includes inventory tracking, listing management, and modular routing structure.</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">SQL</span>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    <!-- Contact -->
+    <section id="contact">
+      <header class="major">
+        <h2>Get In Touch</h2>
+      </header>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:betheldanlami@gmail.com">betheldanlami@gmail.com</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/danlami-x" target="_blank">github.com/danlami-x</a></li>
+	<li><strong>X:</strong> <a href="https://x.com/BethelDanl71452" target="_blank">x.com/BethelDanl71452</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>&copy; 2026 Danlami Bethel. All rights reserved.</p>
+  </footer>
+</body>
+</html>
